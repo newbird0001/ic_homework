@@ -5,11 +5,11 @@ actor {
 
   stable var value:Nat=0;
 
-  public func set(num:Nat):(){
+  public func set(num:Nat):async (){
     value :=num;
   };
   
-  public func increase() : () {
+  public func increase() :async () {
     value += 1;
   };
 
