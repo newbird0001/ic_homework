@@ -2,18 +2,19 @@ import Blob "mo:base/Blob";
 import Text "mo:base/Text";
 import Nat "mo:base/Nat";
 actor {
-  stable var count:Nat=0;
-  public func set(num:Nat):()
-  {
-    count :=num;
+
+  stable var value:Nat=0;
+
+  public func set(num:Nat):(){
+    value :=num;
   };
   
-  public func add() : async () {
-    count:=count + 1;
+  public func increase() : () {
+    value += 1;
   };
 
-  public query func search() : async Nat {
-    count;
+  public query func get() : async Nat {
+    value;
   };
 
   type HttpRequest = {
@@ -31,15 +32,14 @@ actor {
 
   type HeaderField = (Text,Text);
 
-  public query func http_request(args: HttpRequest):async HttpResponse
-  {
-    let content = "<html><body><h1> the value is "# Nat.toText(count) #".</h1></body></html>";
+  public query func http_request(args: HttpRequest):async HttpResponse{
+    let content = "<html><body><h1> the value is "# Nat.toText(value) #".</h1></body></html>";
     {
       body=Text.encodeUtf8(content);
       headers = [("Content-Type", "text/html")];
       status_code = 200;
-
     };
+
   };
   
 };
