@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Microblog</title>
+    <base href="/" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  </head>
+  <body>
+    <main>
+        <header><h1>Microblog<h1></header>
+        <label for="name">What is your name?</label>
+        <input id = "name"/>
+        <button id="setname">set</button>
+        <label for="message">What do you want to post?</label>
+        <textarea id="message"></textarea>
+        <label for="otp">password</label>
+        <input id="otp"/>
+        <button id="post">post</button>
+        &nbsp;<span id = "err"></span>
+        <section id="posts"></section>
+        <select id="follows">
+            <option selected disabled hidden>请选择博主</option>
+        </select>
+        &nbsp;<button id="find">查询</button>
+        <section id="followspost"></section>
+
+    </main>
+  </body>
+</html>
