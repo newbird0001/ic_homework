@@ -50,7 +50,7 @@ actor {
 
   public shared(mes) func follow(id:Principal):async()
   {
-    assert(Principal.toText(mes.caller) == "ov7vd-ed44i-szzhq-2gyik-6kb7y-wvckb-vtkc6-enrd4-i6nlz-ppmpj-pae");
+    
 
     followed := List.push(Principal.toText(id),followed);
   };
